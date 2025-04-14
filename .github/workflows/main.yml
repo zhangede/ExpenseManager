@@ -54,7 +54,8 @@ jobs:
           api-level: 29
           arch: arm64-v8a
           target: google_apis
-          disable-hw-accel: true
+          emulator-options: "-no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -accel off"
+          emulator-boot-timeout: 600
           script: ./gradlew connectedCheck
 
       - name: Upload test report
